@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>首页</title>
+    <link rel="stylesheet" href="/public/css/main.css">
 </head>
 <body>
     <h1>这是首页内容</h1>
@@ -12,10 +13,14 @@
     <p>id: <%=res.id%></p>
     <p>name: <%=res.name%></p>
 
+    <img src="/public/image/image_1.png" alt="">
+
     <ul>
         <%for(var i = 0; i < lists.length; i++){%>
         <li><%=lists[i]%></li>
         <%}%>
     </ul>
+
+    <script src="/public/js/main.js"></script>
 </body>
 </html>
