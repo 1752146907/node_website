@@ -1,5 +1,6 @@
 ﻿ 
 结构：
+client		// 前端项目
 egg-demo	// egg.js框架、文章接口开发
 node_login	// 登录注册
 
