@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <van-uploader
                 v-model="fileList"
                 :max-count="1"
@@ -11,7 +11,7 @@
             <van-field label="文章简介" placeholder="文章简介" v-model="summary"></van-field>
             <van-field label="文章内容" placeholder="文章内容" v-model="content" type="textarea" autosize></van-field>
         </van-cell-group>
-        <van-button type="primary" @click="handleAdd" class="add-button">提交</van-button>
+        <van-button  @click="handleAdd" class="add-button">提交</van-button>
     </div>
 </template>
 
@@ -53,11 +53,16 @@
 </script>
 
 <style scoped>
+    .main{
+        margin-top: 20px;
+    }
     .add-button {
         position: absolute;
         left: 0;
         bottom: 50px;
         width: 100%;
+        color: #ffffff;
         display: inline-block;
+        background: #1989fa;
     }
 </style>
