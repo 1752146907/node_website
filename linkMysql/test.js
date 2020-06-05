@@ -18,22 +18,23 @@ connection.connect();
 // var sql = "INSERT INTO users(`name`,`sex`) VALUES ('nidaye',1)";
 
 // 更新
-let sql = 'UPDATE users SET name=?,sex=? WHERE id=?';
-// UPDATE users SET name='tom',sex=1 WHERE id=2
-let modSqlParams = ['Tom2', '0', 2];
+// let sql = 'UPDATE users SET name=?,sex=? WHERE id=?';
+// let modSqlParams = ['Mr.Li', '0', 2];
 
 // 删除
 // var sql = "DELETE FROM users where id = 3";
 
 // 查询
-// var sql = "SELECT * FROM users";
+var sql = "SELECT * FROM users";
 
 
 
-connection.query(sql,modSqlParams, function (error, results, fields) {
+connection.query(sql, function (error, results, fields) {
     if(error){
         console.log('[SELECT ERROR] - ',error.message);
         return;
     }
+    console.log("执行成功！")
     console.log(results);
+    return results
 });
