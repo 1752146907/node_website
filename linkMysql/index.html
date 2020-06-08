@@ -9,9 +9,9 @@
         $(document).ready(function(){
             $("button").click(function(){
                 $.ajax({
-                    url:'http://192.168.1.103:8888',//地址
+                    url:'http://192.168.33.178:8888/',//地址
                     dataType:'json',//数据类型
-                    type:'GET',//类型
+                    type:'POST',//类型
                     timeout:2000,//超时
                     //请求成功
                     success:function(data,status){
@@ -35,7 +35,7 @@
 </head>
 <body>
 
-<button>发送一个 HTTP GET 请求并获取返回结果</button>
+<button>发送一个 HTTP 请求并获取返回结果</button>
 
 </body>
 </html>
