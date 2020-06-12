@@ -1,7 +1,21 @@
 
 var http       = require('http');
 var mysql      = require('mysql');
+var url = require('url');
+var App = require('./component/demo/app');
 
+/**
+ * 引入文件例子
+ **/
+var hello = require('./component/demo');
+hello = new hello();
+hello.setName('Mr.Li');
+hello.sayHello();
+
+
+/**
+ * 连接数据库
+ **/
 var connection = mysql.createConnection({
     host     : 'rm-bp10udsjt913x5r5fuo.mysql.rds.aliyuncs.com',
     user     : 'lirongzhi',
@@ -40,6 +54,10 @@ function httpServerSee() {
         // 内容类型: text/plain
         response.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': 'true'});
+
+        // 打印当前URL地址
+        let path = url.parse(request.url).pathname;
+        console.log(path)
 
         // 发送响应数据 resultsData
         response.end(JSON.stringify(resultsData));
@@ -80,6 +98,7 @@ function handleUpdate() {
 
         // 执行http方法
         httpServerSee();
+
         console.log("执行成功！");
     });
 }
@@ -90,4 +109,4 @@ function handleAdd() {
 
 // 执行查看函数
 handleAfferent(sqlSee);
-// handleUpdate();
+// httpServerSee();
